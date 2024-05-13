@@ -49,6 +49,7 @@ use snowbridge_router_primitives::inbound::{
 use sp_core::{H160, H256};
 use sp_runtime::{DispatchError::Token, FixedU128, TokenError::FundsUnavailable};
 use system_parachains_constants::kusama::currency::UNITS;
+use log;
 
 const INITIAL_FUND: u128 = 5_000_000_000 * KUSAMA_ED;
 const CHAIN_ID: u64 = 1;
@@ -340,6 +341,7 @@ fn send_token_from_ethereum_to_penpal() {
 		});
 		// Convert the message to XCM
 		let (xcm, _) = EthereumInboundQueue::do_convert(message_id, message).unwrap();
+		log::debug!("Send xcm to assetHubKusama========: {:#?}", xcm);
 		// Send the XCM
 		let _ = EthereumInboundQueue::send_xcm(xcm, AssetHubKusama::para_id()).unwrap();
 

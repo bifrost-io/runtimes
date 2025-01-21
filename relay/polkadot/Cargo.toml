@@ -109,6 +109,8 @@ sp-debug-derive = { workspace = true }
 # just for the coretime migration
 polkadot-parachain-primitives = { workspace = true }
 
+pallet-sudo = { workspace = true }
+
 [dev-dependencies]
 approx = { workspace = true }
 sp-keyring = { workspace = true }
@@ -133,6 +135,7 @@ std = [
 	"beefy-primitives/std",
 	"binary-merkle-tree/std",
 	"codec/std",
+	"pallet-sudo/std",
 	"frame-benchmarking?/std",
 	"frame-election-provider-support/std",
 	"frame-executive/std",

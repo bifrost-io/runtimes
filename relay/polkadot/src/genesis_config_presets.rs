@@ -189,6 +189,9 @@ fn polkadot_testnet_genesis(
 			"forceEra": Forcing::NotForcing,
 			"slashRewardFraction": Perbill::from_percent(10),
 		},
+		"sudo": {
+			"key": Some(_root_key),
+		},
 		"babe": {
 			"epochConfig": Some(BABE_GENESIS_EPOCH_CONFIG),
 		},
